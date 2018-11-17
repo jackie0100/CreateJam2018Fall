@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
         else if (!playerInput.rightBumper && castingSpell)
         {
             castingSpell = false;
-            player.CastSpell(elements.ToArray());
+            player.CastSpell(elements.ToArray(), charge);
             charge = 0;
             elements.Clear();
         }
