@@ -28,7 +28,11 @@ public class Player : MonoBehaviour
 
         //TODO: Lookup special spell
         //TODO: Lookup art/particle asset
-
+        if (true)
+        {
+            Debug.Log("Spell Casted! - WIP");
+            return;
+        }
         GameObject go = new GameObject();
         go.SetActive(false);
         go.transform.position = this.transform.position;
@@ -73,6 +77,7 @@ public class Player : MonoBehaviour
                 go.AddComponent<AOESpell>();
                 break;
         }
+        //TODO: Add ispelleffects to the gameobject too - Too tired right now
 
         spellcast.CastSpell(this);
     }
