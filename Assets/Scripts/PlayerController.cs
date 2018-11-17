@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody rigidbody;
     GameObject directionalMarker;
-    Transform model;
+    public Transform model;
+
     public float markerDistance = 5f;
 
     public byte playerNumber = 1;
@@ -30,7 +31,6 @@ public class PlayerController : MonoBehaviour
         directionalMarker.transform.position = Vector3.MoveTowards(gameObject.transform.position, Vector3.zero, markerDistance);
         RotateModelTowardsTarget();
 
-        model = transform.Find("Model");
     }
 
     // Update is called once per frame
@@ -67,6 +67,6 @@ public class PlayerController : MonoBehaviour
 
     void RotateModelTowardsTarget()
     {
-        Vector3 newDirection = Vector3.RotateTowards(model.forward, directionalMarker.transform.position, 1, 0);
+        model.rotation = Quaternion.LookRotation(playerInput.leftStick, Vector3.up);
     }
 }
