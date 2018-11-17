@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpellFactory : MonoBehaviour {
+public static class SpellFactory
+{
+    public static void GetSpell(SpellSchools spell1)
+    {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
 }
