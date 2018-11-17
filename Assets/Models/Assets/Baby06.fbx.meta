@@ -1,0 +1,231 @@
+fileFormatVersion: 2
+guid: 300efcc6f674b3242b175e58739672ee
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Baby
+    100002: //RootNode
+    100004: Body
+    100006: Daiper
+    100008: head
+    100010: Hood
+    100012: l_anckle
+    100014: l_ball
+    100016: l_clavical
+    100018: l_clavical_ctrl
+    100020: l_elbow
+    100022: l_forearm
+    100024: l_hand_ctrl
+    100026: l_hand_offset
+    100028: l_hip
+    100030: l_knee
+    100032: l_shoulder
+    100034: l_shoulder_helper
+    100036: l_toe
+    100038: l_wrist
+    100040: neck
+    100042: pelvic
+    100044: r_anckle
+    100046: r_ball
+    100048: r_clavical
+    100050: r_clavical_ctrl1
+    100052: r_elbow
+    100054: r_forearm
+    100056: r_hand_ctrl
+    100058: r_hand_offset1
+    100060: r_hip
+    100062: r_knee
+    100064: r_shoulder
+    100066: r_shoulder_helper
+    100068: r_toe
+    100070: r_wrist
+    100072: skeleton1
+    100074: skeleton2
+    400000: Baby
+    400002: //RootNode
+    400004: Body
+    400006: Daiper
+    400008: head
+    400010: Hood
+    400012: l_anckle
+    400014: l_ball
+    400016: l_clavical
+    400018: l_clavical_ctrl
+    400020: l_elbow
+    400022: l_forearm
+    400024: l_hand_ctrl
+    400026: l_hand_offset
+    400028: l_hip
+    400030: l_knee
+    400032: l_shoulder
+    400034: l_shoulder_helper
+    400036: l_toe
+    400038: l_wrist
+    400040: neck
+    400042: pelvic
+    400044: r_anckle
+    400046: r_ball
+    400048: r_clavical
+    400050: r_clavical_ctrl1
+    400052: r_elbow
+    400054: r_forearm
+    400056: r_hand_ctrl
+    400058: r_hand_offset1
+    400060: r_hip
+    400062: r_knee
+    400064: r_shoulder
+    400066: r_shoulder_helper
+    400068: r_toe
+    400070: r_wrist
+    400072: skeleton1
+    400074: skeleton2
+    2100000: lambert5
+    2100002: lambert3
+    2100004: lambert4
+    4300000: Daiper
+    4300002: Body
+    4300004: Hood
+    7400000: Walk
+    7400002: Idle
+    9500000: //RootNode
+    13700000: Body
+    13700002: Daiper
+    13700004: Hood
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 26
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
