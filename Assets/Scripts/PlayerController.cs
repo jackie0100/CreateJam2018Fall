@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody rigidbody;
     GameObject directionalMarker;
     public Transform model;
+    Player player;
 
     public float markerDistance = 5f;
 
@@ -17,12 +18,17 @@ public class PlayerController : MonoBehaviour
     public float moveForce = 50;
     public float maxSpeed = 10;
 
+    List<SpellSchools> elements = new List<SpellSchools>(3);
+    bool castingSpell = false;
+    float charge;
+    public float chargeSpeed, chargeMax;
 
     // Use this for initialization
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         playerInput.playerNumber = playerNumber;
+        player = GetComponent<Player>();
 
         //Spawn a directional marker
         directionalMarker = new GameObject("P" + playerNumber + "DirectionalMarker");
@@ -38,7 +44,11 @@ public class PlayerController : MonoBehaviour
     {
         playerInput.GetInput();
 
-
+        //TODO: If we want a pause or similar, we might need a static isRunning bool somewhere in a game manager? For now, this if-statement will just laways be true
+        if (true)
+        {
+            MagicHandling();
+        }
     }
 
     private void FixedUpdate()
@@ -46,11 +56,11 @@ public class PlayerController : MonoBehaviour
         //TODO: If we want a pause or similar, we might need a static isRunning bool somewhere in a game manager? For now, this if-statement will just laways be true
         if (true)
         {
-            movement();
+            Movement();
         }
     }
 
-    void movement()
+    void Movement()
     {
         if (playerInput.leftStick.magnitude > 0) //If there is input, move
         {
@@ -68,5 +78,57 @@ public class PlayerController : MonoBehaviour
     void RotateModelTowardsTarget()
     {
         model.rotation = Quaternion.LookRotation(playerInput.leftStick, Vector3.up);
+    }
+
+    void MagicHandling()
+    {
+        if (playerInput.a)
+        {
+            AddSpellElement(SpellSchools.Rot);
+        }
+        else if (playerInput.b)
+        {
+            AddSpellElement(SpellSchools.Fire);
+        }
+        else if (playerInput.x)
+        {
+            AddSpellElement(SpellSchools.Dark);
+        }
+        else if (playerInput.y)
+        {
+            AddSpellElement(SpellSchools.Ritual);
+        }
+        else if (playerInput.rightBumper)
+        {
+            if (castingSpell)
+            {
+                charge = Mathf.Clamp(charge + (chargeSpeed * Time.deltaTime), 1, chargeMax);
+            }
+            else
+            {
+                castingSpell = true;
+            }
+        }
+        else if (!playerInput.rightBumper && castingSpell)
+        {
+            castingSpell = false;
+            player.CastSpell(elements.ToArray());
+            charge = 0;
+            elements.Clear();
+        }
+    }
+
+    void AddSpellElement(SpellSchools element)
+    {
+        // Manage new elements
+        if (elements.Count < 3)
+        {
+            elements.Add(element);
+        }
+        else
+        {
+            // Replace last element?
+            elements[2] = element;
+        }
     }
 }
