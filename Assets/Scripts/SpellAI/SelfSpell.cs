@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SelfSpell : MonoBehaviour, ICastable {
-    public void CastSpell(Player player)
+    public void CastSpell(Player player, float damagemultiplier)
     {
         if (this.gameObject.GetComponent<ProtectSpell>() != null)
         {
-            this.gameObject.GetComponent<IDamageable>().DoDamageEffect(null);
+            this.gameObject.GetComponent<IDamageable>().DoDamageEffect(null, damagemultiplier);
         }
         else
         {

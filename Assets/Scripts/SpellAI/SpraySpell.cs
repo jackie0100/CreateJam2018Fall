@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpraySpell : MonoBehaviour, ICastable
 {
-    public void CastSpell(Player player)
+    public void CastSpell(Player player, float damagemultiplier)
     {
         Collider[] cols = Physics.OverlapSphere(player.transform.position, 5);
         
@@ -15,7 +15,7 @@ public class SpraySpell : MonoBehaviour, ICastable
                 Vector3 dir = col.transform.position - player.transform.position;
                 if (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg < 45 && Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg > -45)
                 {
-                    this.GetComponent<IDamageable>().DoDamageEffect(col.transform.GetComponent<Player>());
+                    this.GetComponent<IDamageable>().DoDamageEffect(col.transform.GetComponent<Player>(), damagemultiplier);
                 }
             }
         }

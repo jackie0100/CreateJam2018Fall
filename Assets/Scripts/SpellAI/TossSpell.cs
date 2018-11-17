@@ -7,7 +7,7 @@ public class TossSpell : MonoBehaviour, ICastable
     Player player;
     float timer = 0;
 
-    public void CastSpell(Player player)
+    public void CastSpell(Player player, float damagemultiplier)
     {
         player = player;
     }
@@ -35,11 +35,11 @@ public class TossSpell : MonoBehaviour, ICastable
         //TODO: Deal damage to collision target if player.S
         if (collision.transform.GetComponent<Player>() != null)
         {
-            this.GetComponent<IDamageable>().DoDamageEffect(collision.transform.GetComponent<Player>());
+            this.GetComponent<IDamageable>().DoDamageEffect(collision.transform.GetComponent<Player>(), 0);
         }
         else
         {
-            this.GetComponent<IDamageable>().DoDamageEffect(null);
+            this.GetComponent<IDamageable>().DoDamageEffect(null, 0);
         }
     }
 }

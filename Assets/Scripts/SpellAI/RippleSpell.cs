@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RippleSpell : MonoBehaviour, IDamageable {
-    public void DoDamageEffect(Player targetPlayer)
+    public void DoDamageEffect(Player targetPlayer, float damagemultiplier)
     {
         //TODO: Implement the ripples/Spawn game objects.
     }

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IDamageable
 {
-    void DoDamageEffect(Player targetPlayer);
+    void DoDamageEffect(Player targetPlayer, float damagemultiplier);
 }

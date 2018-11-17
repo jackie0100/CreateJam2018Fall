@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AOESpell : MonoBehaviour, IDamageable
 {
-    public void DoDamageEffect(Player targetPlayer)
+    public void DoDamageEffect(Player targetPlayer, float damagemultiplier)
     {
         Collider[] cols = Physics.OverlapSphere(targetPlayer.transform.position, 3);
 
@@ -12,7 +12,11 @@ public class AOESpell : MonoBehaviour, IDamageable
         {
             if (col.transform.GetComponent<Player>() != null)
             {
-                this.GetComponent<IDamageable>().DoDamageEffect(col.transform.GetComponent<Player>());
+                //TODO: Deal some damage
+                if (this.GetComponent<ISpellEffect>() != null)
+                {
+                    this.GetComponent<ISpellEffect>().DoSpellEffect(col.transform.GetComponent<Player>(), damagemultiplier);
+                }
             }
         }
     }

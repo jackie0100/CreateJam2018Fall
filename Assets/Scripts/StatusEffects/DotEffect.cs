@@ -16,8 +16,7 @@ public class DotEffect : StatusEffect
     {
         timer = 0;
         targetPlayer = player;
-
-        while (timer > effectLenght)
+        while (timer < effectLenght)
         {
             player.DealDamage(damage);
             timer++;

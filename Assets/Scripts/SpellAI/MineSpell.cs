@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MineSpell : MonoBehaviour, IDamageable
 {
-    public void DoDamageEffect(Player castingPlayer)
+    public void DoDamageEffect(Player castingPlayer, float damagemultiplier)
     {
         //TODO: Place new gameobjects
     }
