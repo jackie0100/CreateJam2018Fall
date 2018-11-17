@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ICastable
 {
-    void CastSpell(Player player);
+    void CastSpell(Player castingPlayer);
 }

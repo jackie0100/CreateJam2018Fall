@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MineSpell : MonoBehaviour {
+public class MineSpell : MonoBehaviour, IDamageable
+{
+    public void DoDamageEffect(Player castingPlayer)
+    {
+        //TODO: Place new gameobjects
+    }
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

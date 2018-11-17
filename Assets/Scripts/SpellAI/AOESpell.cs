@@ -2,10 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AOESpeel : MonoBehaviour {
+public class AOESpell : MonoBehaviour, IDamageable
+{
+    public void DoDamageEffect(Player targetPlayer)
+    {
+        Collider[] cols = Physics.OverlapSphere(targetPlayer.transform.position, 3);
 
-	// Use this for initialization
-	void Start () {
+        foreach (Collider col in cols)
+        {
+            if (col.transform.GetComponent<Player>() != null)
+            {
+                this.GetComponent<IDamageable>().DoDamageEffect(col.transform.GetComponent<Player>());
+            }
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

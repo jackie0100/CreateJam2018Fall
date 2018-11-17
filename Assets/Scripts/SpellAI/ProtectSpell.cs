@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RippleSpell : MonoBehaviour, IDamageable {
-    public void DoDamageEffect(Player targetPlayer)
+public class ProtectSpell : MonoBehaviour, ISpellEffect
+{
+    public void DoSpellEffect(Player targetPlayer)
     {
-        //TODO: Implement the ripples/Spawn game objects.
+        //TODO: Apply status effect
     }
 
     // Use this for initialization

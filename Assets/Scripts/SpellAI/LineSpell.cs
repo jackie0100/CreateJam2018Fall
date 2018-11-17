@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LineSpell : MonoBehaviour {
+public class LineSpell : MonoBehaviour, ICastable {
+    public void CastSpell(Player player)
+    {
+        throw new System.NotImplementedException();
+    }
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
