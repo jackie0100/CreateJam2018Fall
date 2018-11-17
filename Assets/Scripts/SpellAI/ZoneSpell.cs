@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ZoneSpell : MonoBehaviour, IDamageable {
-    public void DoDamageEffect(Player targetPlayer)
+    public void DoDamageEffect(Player targetPlayer, float damagemultiplier)
     {
         //TODO: Spawn in the area/zone
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LineSpell : MonoBehaviour, ICastable {
-    public void CastSpell(Player player)
+    public void CastSpell(Player player, float damagemultiplier)
     {
         throw new System.NotImplementedException();
     }

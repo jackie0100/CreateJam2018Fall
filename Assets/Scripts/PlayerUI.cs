@@ -12,4 +12,9 @@ public class PlayerUI : MonoBehaviour
     {
         this.transform.rotation = Camera.main.transform.rotation;
     }
+
+    public void UpdateHealthbar(float percentage)
+    {
+        healthBar.fillAmount = percentage;
+    }
 }

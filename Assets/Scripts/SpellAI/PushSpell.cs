@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PushSpell : MonoBehaviour, ISpellEffect
 {
-    public void DoSpellEffect(Player targetPlayer)
+    public void DoSpellEffect(Player targetPlayer, float damagemultiplier)
     {
         targetPlayer.GetComponent<Rigidbody>().AddForce((this.transform.position - targetPlayer.transform.position).normalized, ForceMode.VelocityChange);
     }

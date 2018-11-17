@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ISpellEffect
 {
-    void DoSpellEffect(Player targetPlayer);
+    void DoSpellEffect(Player targetPlayer, float damagemultiplier);
 }

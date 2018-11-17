@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 136593525116599564}
   - component: {fileID: 54985997534500684}
   - component: {fileID: 114119547888715990}
+  - component: {fileID: 114347778055790940}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -261,6 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2da15afbd39d3d4b991cb11028fcf23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 4102687359335370}
   markerDistance: 5
   playerNumber: 1
   playerInput:
@@ -377,6 +379,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114347778055790940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1856743397556670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2ef5bcfe12a194397ba6e5ca4b28ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  playerUI: {fileID: 114954989281202818}
 --- !u!114 &114798030090103850
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SlowSpell : MonoBehaviour, ISpellEffect
 {
-    public void DoSpellEffect(Player targetPlayer)
+    public void DoSpellEffect(Player targetPlayer, float damagemultiplier)
     {
         //TODO: Apply slow effect.
     }
