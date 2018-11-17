@@ -4,41 +4,69 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    Rigidbody rigidbody;
+    GameObject directionalMarker;
+    Transform model;
+    public float markerDistance = 5f;
+
     public byte playerNumber = 1;
-    //Input variables
-    public Vector3 leftStick, rightStick, dPad;
-    public bool a, b, x, y, leftBumper, RightBumper, back, start, leftStickClick, rightStickClick;
+    [SerializeField]
+    public ControllerInput playerInput = new ControllerInput();
+
+    public float moveForce = 50;
+    public float maxSpeed = 10;
 
 
     // Use this for initialization
     void Start()
     {
+        rigidbody = GetComponent<Rigidbody>();
+        playerInput.playerNumber = playerNumber;
 
+        //Spawn a directional marker
+        directionalMarker = new GameObject("P" + playerNumber + "DirectionalMarker");
+        directionalMarker.transform.parent = gameObject.transform;
+        //Place the marker towards center
+        directionalMarker.transform.position = Vector3.MoveTowards(gameObject.transform.position, Vector3.zero, markerDistance);
+        RotateModelTowardsTarget();
+
+        model = transform.Find("Model");
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetInput();
+        playerInput.GetInput();
+
 
     }
 
-    void GetInput()
+    private void FixedUpdate()
     {
-        leftStick = new Vector3(Input.GetAxis("P" + playerNumber + "_LeftStickX"), 0, Input.GetAxis("P" + playerNumber + "_LeftStickY")).normalized;
-        rightStick = new Vector3(Input.GetAxis("P" + playerNumber + "_RightStickX"), 0, Input.GetAxis("P" + playerNumber + "_RightStickY")).normalized;
-        dPad = new Vector3(Input.GetAxis("P" + playerNumber + "_DPadX"), 0, Input.GetAxis("P" + playerNumber + "_DPadY")).normalized;
+        //TODO: If we want a pause or similar, we might need a static isRunning bool somewhere in a game manager? For now, this if-statement will just laways be true
+        if (true)
+        {
+            movement();
+        }
+    }
 
-        a = Input.GetButton("P" + playerNumber + "_A");
-        b = Input.GetButton("P" + playerNumber + "_B");
-        x = Input.GetButton("P" + playerNumber + "_X");
-        y = Input.GetButton("P" + playerNumber + "_Y");
-        leftBumper = Input.GetButton("P" + playerNumber + "_LeftBumper");
-        RightBumper = Input.GetButton("P" + playerNumber + "_RightBumper");
-        back = Input.GetButton("P" + playerNumber + "_Back");
-        start = Input.GetButton("P" + playerNumber + "_Start");
-        leftStickClick = Input.GetButton("P" + playerNumber + "_LeftStickClick");
-        rightStickClick = Input.GetButton("P" + playerNumber + "_RightStickClick");
+    void movement()
+    {
+        if (playerInput.leftStick.magnitude > 0) //If there is input, move
+        {
+            Vector3 forceToApply = playerInput.leftStick * moveForce;
+            rigidbody.AddForce(forceToApply);
 
+            rigidbody.velocity = Vector3.ClampMagnitude(rigidbody.velocity, maxSpeed);
+
+            directionalMarker.transform.position = gameObject.transform.position + (playerInput.leftStick * markerDistance);
+
+            RotateModelTowardsTarget();
+        }
+    }
+
+    void RotateModelTowardsTarget()
+    {
+        Vector3 newDirection = Vector3.RotateTowards(model.forward, directionalMarker.transform.position, 1, 0);
     }
 }

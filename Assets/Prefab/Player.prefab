@@ -121,9 +121,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4749108118545514}
-  - component: {fileID: 33330804857636656}
-  - component: {fileID: 23532013516403534}
-  - component: {fileID: 65428111941945078}
+  - component: {fileID: 136826769211931038}
+  - component: {fileID: 54241964982743806}
+  - component: {fileID: 114548396660761976}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -148,6 +148,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1922158908576800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4184285459563220}
+  - component: {fileID: 33076815622661972}
+  - component: {fileID: 23766497245731354}
+  m_Layer: 0
+  m_Name: Model
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4184285459563220
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1922158908576800}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4749108118545514}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4749108118545514
 Transform:
   m_ObjectHideFlags: 1
@@ -155,19 +185,20 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1856743397556670}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.7, y: 0, z: 0}
+  m_LocalPosition: {x: 5, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224492919237188834}
+  - {fileID: 4184285459563220}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23532013516403534
+--- !u!23 &23766497245731354
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1856743397556670}
+  m_GameObject: {fileID: 1922158908576800}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -197,25 +228,28 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33330804857636656
+--- !u!33 &33076815622661972
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1856743397556670}
+  m_GameObject: {fileID: 1922158908576800}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65428111941945078
-BoxCollider:
+--- !u!54 &54241964982743806
+Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1856743397556670}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!114 &114150056906351142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -313,6 +347,36 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114548396660761976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1856743397556670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2da15afbd39d3d4b991cb11028fcf23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  markerDistance: 5
+  playerNumber: 1
+  playerInput:
+    playerNumber: 1
+    leftStick: {x: 0, y: 0, z: 0}
+    rightStick: {x: 0, y: 0, z: 0}
+    dPad: {x: 0, y: 0, z: 0}
+    a: 0
+    b: 0
+    x: 0
+    y: 0
+    leftBumper: 0
+    RightBumper: 0
+    back: 0
+    start: 0
+    leftStickClick: 0
+    rightStickClick: 0
+  moveForce: 50
+  maxSpeed: 15
 --- !u!114 &114798030090103850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -404,6 +468,19 @@ MonoBehaviour:
   - {fileID: 114798030090103850}
   - {fileID: 114910817372748378}
   healthBar: {fileID: 114170582126378066}
+--- !u!136 &136826769211931038
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1856743397556670}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!222 &222487660990538482
 CanvasRenderer:
   m_ObjectHideFlags: 1
