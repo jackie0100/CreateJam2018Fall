@@ -10,7 +10,6 @@ public class RippleSpell : MonoBehaviour, IDamageable {
     }
     public void DoDamageEffect(Vector3 pos, float damagemultiplier)
     {
-
     }
     // Use this for initialization
     void Start () {

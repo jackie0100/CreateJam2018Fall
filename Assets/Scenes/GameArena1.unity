@@ -442,6 +442,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114442393130159998, guid: d40d5c794aa9a0e4cb6112472508168a,
+        type: 2}
+      propertyPath: ripple
+      value: 
+      objectReference: {fileID: 1560752884260270, guid: 85a9de428c2ef9447bf65342d3e6edb1,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d40d5c794aa9a0e4cb6112472508168a, type: 2}
   m_IsPrefabAsset: 0
