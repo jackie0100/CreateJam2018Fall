@@ -1108,7 +1108,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!95 &95879727780177320
 Animator:
@@ -1159,6 +1159,9 @@ MonoBehaviour:
     rightStickClick: 0
   moveForce: 50
   maxSpeed: 10
+  dashImpulseForce: 150
+  dashCooldown: 3
+  dashDuration: 0.5
   chargeSpeed: 0.1
   chargeMax: 2
 --- !u!114 &114150056906351142
