@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198433873205003284}
   - component: {fileID: 199999943173931870}
   m_Layer: 0
-  m_Name: Particle_ZoneSurface
+  m_Name: Particle_ZoneSurfaceProtect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

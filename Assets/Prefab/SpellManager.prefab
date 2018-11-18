@@ -54,7 +54,15 @@ MonoBehaviour:
   spray: {fileID: 1753948515330008, guid: cb49fa9eaa780614c9a9bcb2486db59c, type: 2}
   line: {fileID: 1601784072749982, guid: 272c4295a90ec7249b6fc00dd6a66a6d, type: 2}
   Toss: {fileID: 1744059345883786, guid: 8f14da72a8171da458ca09cb74781814, type: 2}
-  zone: {fileID: 1304049122026614, guid: 072155baf1878c14f90d11cbdd791952, type: 2}
-  mine: {fileID: 1016431372950980, guid: d9a49248b3bef5d4d90f98d84226d185, type: 2}
+  zoneprotect: {fileID: 1304049122026614, guid: d66e0f0b14089354b9f1190bd606f885,
+    type: 2}
+  zonedot: {fileID: 1304049122026614, guid: ca94ab799b82a1b4b8d4a829b4fac306, type: 2}
+  zoneslow: {fileID: 1304049122026614, guid: 346130e1f0ffa6640a4b440237600bb9, type: 2}
+  zonepush: {fileID: 1304049122026614, guid: 38a55c4607a0e784fafe9f0a74ba7b1f, type: 2}
+  mineprotect: {fileID: 1016431372950980, guid: 6acc8f91a52ed684b8bc637f4965435c,
+    type: 2}
+  minedot: {fileID: 1016431372950980, guid: 6acc8f91a52ed684b8bc637f4965435c, type: 2}
+  mineslow: {fileID: 1016431372950980, guid: 0ca624bc245f97c46b4e8f772f60b421, type: 2}
+  minepush: {fileID: 1016431372950980, guid: ec6f83e040fc9e84b9716968c8c91d7b, type: 2}
   ripple: {fileID: 0}
   aoe: {fileID: 1656361217569290, guid: c41ea5dc6c3db6646961249ad181f9f4, type: 2}

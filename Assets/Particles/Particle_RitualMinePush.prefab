@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198282462139861388}
   - component: {fileID: 199196473304553514}
   m_Layer: 0
-  m_Name: Particle_RitualMine
+  m_Name: Particle_RitualMinePush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

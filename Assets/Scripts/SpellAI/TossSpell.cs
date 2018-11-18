@@ -44,30 +44,34 @@ public class TossSpell : MonoBehaviour, ICastable
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.tag == "Player" || collision.tag == "Wall")
+        if (move)
         {
-            //TODO: Deal damage to collision target if player.S
-            if (collision.transform.GetComponent<Player>() != null)
+            if (collision.tag == "Player" || collision.tag == "Wall")
             {
-                if (collision.transform.GetComponent<Player>() == player && timer <= 1)
-                    return;
-
-                if (Random.Range(0, 100) >= 95)
+                //TODO: Deal damage to collision target if player.S
+                if (collision.transform.GetComponent<Player>() != null)
                 {
-                    collision.transform.GetComponent<Player>().DealDamage(Random.Range(1.0f, 2.0f) * damageMultiplier * 1.5f);
+                    if (collision.transform.GetComponent<Player>() == player && timer <= 1)
+                        return;
+
+                    if (Random.Range(0, 100) >= 95)
+                    {
+                        collision.transform.GetComponent<Player>().DealDamage(Random.Range(5.0f, 8.0f) * damageMultiplier * 1.5f);
+                    }
+                    else
+                    {
+                        collision.transform.GetComponent<Player>().DealDamage(Random.Range(5.0f, 8.0f) * damageMultiplier);
+                    }
+                    this.GetComponent<IDamageable>().DoDamageEffect(collision.transform.GetComponent<Player>(), damageMultiplier);
                 }
                 else
                 {
-                    collision.transform.GetComponent<Player>().DealDamage(Random.Range(1.0f, 2.0f) * damageMultiplier);
+                    this.GetComponent<IDamageable>().DoDamageEffect(this.transform.position, damageMultiplier);
                 }
-                this.GetComponent<IDamageable>().DoDamageEffect(collision.transform.GetComponent<Player>(), damageMultiplier);
+                GameObject.Destroy(particlesystem);
+                move = false;
+                this.enabled = false;
             }
-            else
-            {
-                this.GetComponent<IDamageable>().DoDamageEffect(this.transform.position, damageMultiplier);
-            }
-            GameObject.Destroy(particlesystem);
-            move = false;
         }
     }
 }

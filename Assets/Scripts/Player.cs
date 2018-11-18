@@ -36,6 +36,11 @@ public class Player : MonoBehaviour
             if (value <= 0)
             {
                 //TODO: Kill player first!
+                this.GetComponent<PlayerController>().modelAnimator.SetBool("isWalking", false);
+                this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                playerUI.gameObject.SetActive(false);
+                this.gameObject.GetComponent<PlayerController>().enabled = false;
+
                 currentHealth = 0;
             }
             else
@@ -111,7 +116,8 @@ public class Player : MonoBehaviour
         switch (localschool)
         {
             case SpellSchools.Ritual:
-                go.AddComponent<MineSpell>();
+                MineSpell ms = go.AddComponent<MineSpell>();
+                ms.enabled = false;
                 break;
             case SpellSchools.Rot:
                 go.AddComponent<ZoneSpell>();
@@ -145,7 +151,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        spellcast.CastSpell(this, 0);
+        spellcast.CastSpell(this, damagemultiplier);
     }
 
     public void AddStatusEffect(StatusEffect statuseffect)
@@ -166,6 +172,7 @@ public class Player : MonoBehaviour
             damage /= (playerStatusEffect.Count(s => s.GetType() == typeof(ProtectEffect)) * 2);
             playerStatusEffect.RemoveAll(s => s.GetType() == typeof(ProtectEffect));
         }
+        Debug.Log(damage);
         CurrentHealth -= damage;
     }
 }

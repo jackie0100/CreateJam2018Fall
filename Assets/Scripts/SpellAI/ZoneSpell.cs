@@ -15,7 +15,24 @@ public class ZoneSpell : MonoBehaviour, IDamageable
     public void DoDamageEffect(Vector3 pos, float damagemultiplier)
     {
         damageMultiplier = damagemultiplier;
-        GameObject.Instantiate(SpellManager.instance.zone, pos, Quaternion.identity, this.transform);
+
+        if (this.GetComponent<ISpellEffect>() is ProtectSpell)
+        {
+            GameObject.Instantiate(SpellManager.instance.zoneprotect, pos, Quaternion.identity, this.transform);
+        }
+        else if (this.GetComponent<ISpellEffect>() is DotSpell)
+        {
+            GameObject.Instantiate(SpellManager.instance.zonedot, pos, Quaternion.identity, this.transform);
+        }
+        else if (this.GetComponent<ISpellEffect>() is SlowSpell)
+        {
+            GameObject.Instantiate(SpellManager.instance.zoneslow, pos, Quaternion.identity, this.transform);
+        }
+        else if (this.GetComponent<ISpellEffect>() is PushSpell)
+        {
+            GameObject.Instantiate(SpellManager.instance.zonepush, pos, Quaternion.identity, this.transform);
+        }
+
         BoxCollider col = this.gameObject.AddComponent<BoxCollider>();
         col.size = new Vector3(2,2,2);
         col.isTrigger = true;
@@ -43,11 +60,11 @@ public class ZoneSpell : MonoBehaviour, IDamageable
             {
                 if (Random.Range(0, 100) >= 95)
                 {
-                    p.DealDamage(Random.Range(0.25f, 1f) * damageMultiplier * 1.5f);
+                    p.DealDamage(Random.Range(0.5f, 2f) * damageMultiplier * 1.5f);
                 }
                 else
                 {
-                    p.DealDamage(Random.Range(0.25f, 1f) * damageMultiplier);
+                    p.DealDamage(Random.Range(0.5f, 2f) * damageMultiplier);
                 }
                 if (this.GetComponent<ISpellEffect>() != null && Random.Range(0, 100) > 50)
                 {

@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     GameObject directionalMarker;
     public Transform model;
     Player player;
-    Animator modelAnimator;
+    public Animator modelAnimator;
 
     public float markerDistance = 5f;
 
@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
         {
             if (castingSpell)
             {
-                charge = Mathf.Clamp(charge + (chargeSpeed * Time.deltaTime), 1, chargeMax);
+                charge = Mathf.Clamp(charge + (chargeSpeed * Time.deltaTime), 1.0f, chargeMax);
             }
             else
             {

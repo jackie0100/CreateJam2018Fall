@@ -19,11 +19,11 @@ public class AOESpell : MonoBehaviour, IDamageable
             {
                 if (Random.Range(0, 100) >= 95)
                 {
-                    col.GetComponent<Player>().DealDamage(Random.Range(1.0f, 2.0f) * damagemultiplier * 1.5f);
+                    col.GetComponent<Player>().DealDamage(Random.Range(2.0f, 4.0f) * damagemultiplier * 1.5f);
                 }
                 else
                 {
-                    col.GetComponent<Player>().DealDamage(Random.Range(1.0f, 2.0f) * damagemultiplier);
+                    col.GetComponent<Player>().DealDamage(Random.Range(2.0f, 4.0f) * damagemultiplier);
                 }
                 if (this.GetComponent<ISpellEffect>() != null)
                 {

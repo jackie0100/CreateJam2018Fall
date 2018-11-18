@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpellManager : MonoBehaviour
 {
@@ -13,9 +14,21 @@ public class SpellManager : MonoBehaviour
     [SerializeField]
     public GameObject Toss;
     [SerializeField]
-    public GameObject zone;
+    public GameObject zoneprotect;
     [SerializeField]
-    public GameObject mine;
+    public GameObject zonedot;
+    [SerializeField]
+    public GameObject zoneslow;
+    [SerializeField]
+    public GameObject zonepush;
+    [SerializeField]
+    public GameObject mineprotect;
+    [SerializeField]
+    public GameObject minedot;
+    [SerializeField]
+    public GameObject mineslow;
+    [SerializeField]
+    public GameObject minepush;
     [SerializeField]
     public GameObject ripple;
     [SerializeField]
@@ -25,5 +38,13 @@ public class SpellManager : MonoBehaviour
     void Start()
     {
         instance = this;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

@@ -7,6 +7,7 @@ public class SpraySpell : MonoBehaviour, ICastable
     public void CastSpell(Player player, float damagemultiplier)
     {
         GameObject.Instantiate(SpellManager.instance.spray, player.transform.position, Quaternion.identity, this.transform);
+        this.transform.rotation = player.GetComponent<PlayerController>().model.rotation;
 
         Collider[] cols = Physics.OverlapSphere(player.transform.position, 5, 512);
         if (cols.Length > 1)
