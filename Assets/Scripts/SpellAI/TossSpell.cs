@@ -45,7 +45,11 @@ public class TossSpell : MonoBehaviour, ICastable
             {
                 collision.transform.GetComponent<Player>().DealDamage(Random.Range(1.0f, 2.0f) * damageMultiplier);
             }
-            this.GetComponent<IDamageable>().DoDamageEffect(collision.transform.GetComponent<Player>(), 0);
+            this.GetComponent<IDamageable>().DoDamageEffect(collision.transform.GetComponent<Player>(), damageMultiplier);
+        }
+        else
+        {
+            this.GetComponent<IDamageable>().DoDamageEffect(collision.transform.position, damageMultiplier);
         }
     }
 }

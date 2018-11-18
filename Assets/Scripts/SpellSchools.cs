@@ -4,8 +4,8 @@ using UnityEngine;
 
 public enum SpellSchools
 { 
-    Ritual = 1,
-    Rot = 2,
-    Dark = 4,
-    Fire = 8,
+    Ritual = 0,
+    Rot = 1,
+    Dark = 2,
+    Fire = 3,
 }

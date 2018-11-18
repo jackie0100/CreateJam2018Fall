@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
         //    return;
         //}
         GameObject go = new GameObject();
-        go.SetActive(false);
+        //go.SetActive(false);
         go.transform.position = this.transform.position;
         SpellSchools localschool;
         ICastable spellcast = null;

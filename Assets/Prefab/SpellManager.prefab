@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1944914033229020}
+  m_IsPrefabAsset: 1
+--- !u!1 &1944914033229020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4066281656644968}
+  - component: {fileID: 114442393130159998}
+  m_Layer: 0
+  m_Name: SpellManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4066281656644968
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1944914033229020}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.3527594, y: 9.954571, z: 2.1747894}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114442393130159998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1944914033229020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03745975ecf233e4788d48a7d8df16a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spray: {fileID: 1753948515330008, guid: cb49fa9eaa780614c9a9bcb2486db59c, type: 2}
+  line: {fileID: 1601784072749982, guid: 272c4295a90ec7249b6fc00dd6a66a6d, type: 2}
+  Toss: {fileID: 1744059345883786, guid: 8f14da72a8171da458ca09cb74781814, type: 2}
+  zone: {fileID: 1304049122026614, guid: 072155baf1878c14f90d11cbdd791952, type: 2}
+  mine: {fileID: 1016431372950980, guid: d9a49248b3bef5d4d90f98d84226d185, type: 2}
+  ripple: {fileID: 0}
+  aoe: {fileID: 1656361217569290, guid: c41ea5dc6c3db6646961249ad181f9f4, type: 2}

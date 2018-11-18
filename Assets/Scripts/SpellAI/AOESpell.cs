@@ -6,7 +6,12 @@ public class AOESpell : MonoBehaviour, IDamageable
 {
     public void DoDamageEffect(Player targetPlayer, float damagemultiplier)
     {
-        Collider[] cols = Physics.OverlapSphere(targetPlayer.transform.position, 3);
+        DoDamageEffect(targetPlayer.transform.position, damagemultiplier);
+    }
+
+    public void DoDamageEffect(Vector3 pos, float damagemultiplier)
+    {
+        Collider[] cols = Physics.OverlapSphere(pos, 3);
 
         foreach (Collider col in cols)
         {

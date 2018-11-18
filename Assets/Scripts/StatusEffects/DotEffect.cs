@@ -25,7 +25,7 @@ public class DotEffect : StatusEffect
         EndStatusEffect();
     }
 
-    protected override void EndStatusEffect()
+    public override void EndStatusEffect()
     {
         targetPlayer.RemoveStatusEffect(this);
     }

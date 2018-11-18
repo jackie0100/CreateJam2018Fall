@@ -8,8 +8,18 @@ public class ZoneSpell : MonoBehaviour, IDamageable
     float damageMultiplier = 0;
     public void DoDamageEffect(Player targetPlayer, float damagemultiplier)
     {
-        damageMultiplier = damagemultiplier;
+        DoDamageEffect(targetPlayer.transform.position, damagemultiplier);
         //TODO: Spawn in the area/zone
+    }
+
+    public void DoDamageEffect(Vector3 pos, float damagemultiplier)
+    {
+        damageMultiplier = damagemultiplier;
+        GameObject.Instantiate(SpellManager.instance.zone, pos, Quaternion.identity, this.transform);
+        BoxCollider col = this.gameObject.AddComponent<BoxCollider>();
+        col.size = new Vector3(1, 1, 1);
+        col.isTrigger = true;
+        StartCoroutine(DamageHandler());
     }
 
     // Use this for initialization
@@ -46,6 +56,7 @@ public class ZoneSpell : MonoBehaviour, IDamageable
             }
             yield return new WaitForSeconds(1);
         }
+        GameObject.Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -21,7 +21,7 @@ public class SlowEffect : StatusEffect
         EndStatusEffect();
     }
 
-    protected override void EndStatusEffect()
+    public override void EndStatusEffect()
     {
         targetPlayer.GetComponent<PlayerController>().maxSpeed *= 1.25f;
         targetPlayer.RemoveStatusEffect(this);

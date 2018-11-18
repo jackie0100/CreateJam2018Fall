@@ -7,8 +7,14 @@ public class MineSpell : MonoBehaviour, IDamageable
     float damageMultiplier = 0;
     public void DoDamageEffect(Player castingPlayer, float damagemultiplier)
     {
-        damageMultiplier = damagemultiplier;
         //TODO: Place new gameobjects
+        DoDamageEffect(castingPlayer.transform.position, damagemultiplier);
+    }
+
+    public void DoDamageEffect(Vector3 pos, float damagemultiplier)
+    {
+        damageMultiplier = damagemultiplier;
+        GameObject.Instantiate(SpellManager.instance.mine, pos, Quaternion.identity);
     }
 
     // Use this for initialization

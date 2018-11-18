@@ -6,18 +6,27 @@ public class SpraySpell : MonoBehaviour, ICastable
 {
     public void CastSpell(Player player, float damagemultiplier)
     {
-        Collider[] cols = Physics.OverlapSphere(player.transform.position, 5);
-        
-        foreach (Collider col in cols)
+        GameObject.Instantiate(SpellManager.instance.spray, player.transform.position, Quaternion.identity, this.transform);
+
+        Collider[] cols = Physics.OverlapSphere(player.transform.position, 5, 512);
+        if (cols.Length > 1)
         {
-            if (col.transform.GetComponent<Player>() != null && col.transform.GetComponent<Player>() != player)
+            foreach (Collider col in cols)
             {
-                Vector3 dir = col.transform.position - player.transform.position;
-                if (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg < 45 && Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg > -45)
+                Debug.Log(col);
+                if (col.transform.GetComponent<Player>() != null && col.transform.GetComponent<Player>() != player)
                 {
-                    this.GetComponent<IDamageable>().DoDamageEffect(col.transform.GetComponent<Player>(), damagemultiplier);
+                    Vector3 dir = col.transform.position - player.transform.position;
+                    if (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg < 45 && Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg > -45)
+                    {
+                        this.GetComponent<IDamageable>().DoDamageEffect(col.transform.GetComponent<Player>(), damagemultiplier);
+                    }
                 }
             }
+        }
+        else
+        {
+            this.GetComponent<IDamageable>().DoDamageEffect(player.transform.TransformDirection(Vector3.forward * 2) + player.transform.position, damagemultiplier);
         }
     }
 
