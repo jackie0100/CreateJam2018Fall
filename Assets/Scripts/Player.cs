@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -158,9 +159,13 @@ public class Player : MonoBehaviour
         playerStatusEffect.Remove(statuseffect);
     }
 
-
     public void DealDamage(float damage)
     {
+        if (playerStatusEffect.Any(s => s.GetType() == typeof(ProtectEffect)))
+        {
+            damage /= (playerStatusEffect.Count(s => s.GetType() == typeof(ProtectEffect)) * 2);
+            playerStatusEffect.RemoveAll(s => s.GetType() == typeof(ProtectEffect));
+        }
         CurrentHealth -= damage;
     }
 }

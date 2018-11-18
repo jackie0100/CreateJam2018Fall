@@ -15,6 +15,6 @@ public abstract class StatusEffect
     }
 
     public abstract IEnumerator StartStatusEffect(Player player);
-    protected abstract void EndStatusEffect();
+    public abstract void EndStatusEffect();
 
 }

@@ -7,11 +7,11 @@ public class SelfSpell : MonoBehaviour, ICastable {
     {
         if (this.gameObject.GetComponent<ProtectSpell>() != null)
         {
-            this.gameObject.GetComponent<IDamageable>().DoDamageEffect(null, damagemultiplier);
+            this.gameObject.GetComponent<IDamageable>().DoDamageEffect(player, damagemultiplier);
         }
         else
         {
-            //TODO: Apply Status effect to player
+            player.AddStatusEffect(new ProtectEffect(8, SpellSchools.Ritual));
 
         }
     }
