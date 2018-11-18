@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AOESpell : MonoBehaviour, IDamageable
 {
+    ParticleSystem particles;
     public void DoDamageEffect(Player targetPlayer, float damagemultiplier)
     {
         DoDamageEffect(targetPlayer.transform.position, damagemultiplier);
@@ -12,7 +13,7 @@ public class AOESpell : MonoBehaviour, IDamageable
     public void DoDamageEffect(Vector3 pos, float damagemultiplier)
     {
         Collider[] cols = Physics.OverlapSphere(pos, 3);
-        GameObject.Instantiate(SpellManager.instance.aoe, pos + (Vector3.up * 0.5f), Quaternion.identity, this.transform);
+        particles = GameObject.Instantiate(SpellManager.instance.aoe, pos + (Vector3.up * 0.5f), Quaternion.identity, this.transform).GetComponent<ParticleSystem>();
         foreach (Collider col in cols)
         {
             if (col.transform.GetComponent<Player>() != null)
@@ -31,6 +32,8 @@ public class AOESpell : MonoBehaviour, IDamageable
                 }
             }
         }
+
+        StartCoroutine(KillSystem());
     }
 
     // Use this for initialization
@@ -43,4 +46,10 @@ public class AOESpell : MonoBehaviour, IDamageable
     {
 		
 	}
+
+    IEnumerator KillSystem()
+    {
+        yield return new WaitForSeconds(5);
+        GameObject.Destroy(this.gameObject);
+    }
 }
