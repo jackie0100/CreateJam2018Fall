@@ -12,7 +12,14 @@ public class AOESpell : MonoBehaviour, IDamageable
         {
             if (col.transform.GetComponent<Player>() != null)
             {
-                //TODO: Deal some damage
+                if (Random.Range(0, 100) >= 95)
+                {
+                    col.GetComponent<Player>().DealDamage(Random.Range(1.0f, 2.0f) * damagemultiplier * 1.5f);
+                }
+                else
+                {
+                    col.GetComponent<Player>().DealDamage(Random.Range(1.0f, 2.0f) * damagemultiplier);
+                }
                 if (this.GetComponent<ISpellEffect>() != null)
                 {
                     this.GetComponent<ISpellEffect>().DoSpellEffect(col.transform.GetComponent<Player>(), damagemultiplier);

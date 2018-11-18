@@ -6,10 +6,12 @@ public class TossSpell : MonoBehaviour, ICastable
 {
     Player player;
     float timer = 0;
+    float damageMultiplier;
 
     public void CastSpell(Player player, float damagemultiplier)
     {
-        player = player;
+        damageMultiplier = damagemultiplier;
+        this.player = player;
     }
 
     // Use this for initialization
@@ -35,11 +37,15 @@ public class TossSpell : MonoBehaviour, ICastable
         //TODO: Deal damage to collision target if player.S
         if (collision.transform.GetComponent<Player>() != null)
         {
+            if (Random.Range(0, 100) >= 95)
+            {
+                collision.transform.GetComponent<Player>().DealDamage(Random.Range(1.0f, 2.0f) * damageMultiplier * 1.5f);
+            }
+            else
+            {
+                collision.transform.GetComponent<Player>().DealDamage(Random.Range(1.0f, 2.0f) * damageMultiplier);
+            }
             this.GetComponent<IDamageable>().DoDamageEffect(collision.transform.GetComponent<Player>(), 0);
-        }
-        else
-        {
-            this.GetComponent<IDamageable>().DoDamageEffect(null, 0);
         }
     }
 }

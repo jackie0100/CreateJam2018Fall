@@ -6,7 +6,7 @@ public class ProtectSpell : MonoBehaviour, ISpellEffect
 {
     public void DoSpellEffect(Player targetPlayer, float damagemultiplier)
     {
-        //TODO: Apply status effect
+        targetPlayer.AddStatusEffect(new ProtectEffect(4, SpellSchools.Ritual));
     }
 
     // Use this for initialization
