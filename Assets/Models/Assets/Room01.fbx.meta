@@ -1,72 +1,14 @@
 fileFormatVersion: 2
-guid: 1d2dd3b20bbaecb4a9170b382f0ff179
+guid: 8d397d3cf2ce95849ae2a2629892bc71
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Base
-    100002: Car
-    100004: Crib
-    100006: Lamp
-    100008: Playarea
-    100010: polySurface1
-    100012: polySurface2
-    100014: //RootNode
-    100016: Sedan:sedanCar
-    100018: Sedan:wheel_front_left
-    100020: Sedan:wheel_front_right
-    100022: Sedan:wheel_rear_left
-    100024: Sedan:wheel_rear_right
-    100026: Shade
-    400000: Base
-    400002: Car
-    400004: Crib
-    400006: Lamp
-    400008: Playarea
-    400010: polySurface1
-    400012: polySurface2
-    400014: //RootNode
-    400016: Sedan:sedanCar
-    400018: Sedan:wheel_front_left
-    400020: Sedan:wheel_front_right
-    400022: Sedan:wheel_rear_left
-    400024: Sedan:wheel_rear_right
-    400026: Shade
+    100000: //RootNode
+    400000: //RootNode
     2100000: lambert2
-    2100002: lambert4
-    2100004: Wood
-    2100006: Sedan_blinn1
-    2100008: lambert1
-    2300000: Crib
-    2300002: Playarea
-    2300004: polySurface1
-    2300006: polySurface2
-    2300008: Sedan:sedanCar
-    2300010: Sedan:wheel_front_left
-    2300012: Sedan:wheel_front_right
-    2300014: Sedan:wheel_rear_left
-    2300016: Sedan:wheel_rear_right
-    2300018: Shade
-    3300000: Crib
-    3300002: Playarea
-    3300004: polySurface1
-    3300006: polySurface2
-    3300008: Sedan:sedanCar
-    3300010: Sedan:wheel_front_left
-    3300012: Sedan:wheel_front_right
-    3300014: Sedan:wheel_rear_left
-    3300016: Sedan:wheel_rear_right
-    3300018: Shade
-    4300000: Playarea
-    4300002: Crib
-    4300004: Sedan:sedanCar
-    4300006: Sedan:wheel_rear_right
-    4300008: Sedan:wheel_front_right
-    4300010: Sedan:wheel_front_left
-    4300012: Sedan:wheel_rear_left
-    4300014: Shade
-    4300016: polySurface1
-    4300018: polySurface2
-    2186277476908879412: ImportLogs
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pCube1
   externalObjects: {}
   materials:
     importMaterials: 1

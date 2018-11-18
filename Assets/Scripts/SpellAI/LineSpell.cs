@@ -5,7 +5,7 @@ using UnityEngine;
 public class LineSpell : MonoBehaviour, ICastable {
     public void CastSpell(Player player, float damagemultiplier)
     {
-        throw new System.NotImplementedException();
+        //TODO: Linecast and stuff
     }
 
     // Use this for initialization

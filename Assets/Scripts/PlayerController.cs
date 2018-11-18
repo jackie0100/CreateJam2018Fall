@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     GameObject directionalMarker;
     public Transform model;
     Player player;
+    Animator modelAnimator;
 
     public float markerDistance = 5f;
 
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
         //Place the marker towards center
         directionalMarker.transform.position = Vector3.MoveTowards(gameObject.transform.position, Vector3.zero, markerDistance);
         RotateModelTowardsTarget();
+        modelAnimator = model.GetComponent<Animator>();
 
     }
 
@@ -72,6 +74,14 @@ public class PlayerController : MonoBehaviour
             directionalMarker.transform.position = gameObject.transform.position + (playerInput.leftStick * markerDistance);
 
             RotateModelTowardsTarget();
+
+            if (!modelAnimator.GetBool("isWalking"))
+                modelAnimator.SetBool("isWalking", true);
+        }
+        else
+        {
+            if (modelAnimator.GetBool("isWalking"))
+                modelAnimator.SetBool("isWalking", false);
         }
     }
 
@@ -115,6 +125,7 @@ public class PlayerController : MonoBehaviour
             player.CastSpell(elements.ToArray(), charge);
             charge = 0;
             elements.Clear();
+            player.playerUI.ResetSpriteImages();
         }
     }
 
@@ -130,5 +141,6 @@ public class PlayerController : MonoBehaviour
             // Replace last element?
             elements[2] = element;
         }
+        player.playerUI.SetSpriteImage(element, elements.Count - 1);
     }
 }

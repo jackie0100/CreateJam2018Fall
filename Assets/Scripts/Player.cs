@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     private float currentHealth = 100;
     private List<StatusEffect> playerStatusEffect;
     [SerializeField]
-    PlayerUI playerUI;
+    public PlayerUI playerUI;
 
     public float MaxHealth
     {
@@ -73,11 +73,11 @@ public class Player : MonoBehaviour
 
         //TODO: Lookup special spell
         //TODO: Lookup art/particle asset
-        if (true)
-        {
-            Debug.Log("Spell Casted! - WIP");
-            return;
-        }
+        //if (true)
+        //{
+        //    Debug.Log("Spell Casted! - WIP");
+        //    return;
+        //}
         GameObject go = new GameObject();
         go.SetActive(false);
         go.transform.position = this.transform.position;
@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
                 spellcast = go.AddComponent<TossSpell>();
                 break;
         }
-        if (spells.Length >= 1)
+        if (spells.Length > 1)
         {
             localschool = spells[1];
         }
@@ -123,8 +123,10 @@ public class Player : MonoBehaviour
                 break;
         }
 
-        if (spells.Length >= 2)
+        if (spells.Length > 2)
         {
+            localschool = spells[2];
+
             switch (localschool)
             {
                 case SpellSchools.Ritual:
