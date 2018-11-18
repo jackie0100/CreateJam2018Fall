@@ -289,7 +289,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9961291, g: 1, b: 0.4764151, a: 1}
+      maxColor: {r: 1, g: 0, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -732,7 +732,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: 0, z: -0.1}
+    m_Position: {x: 0, y: 0, z: 0.1}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 0, y: 0, z: 0}
     placementMode: 0
@@ -3719,9 +3719,9 @@ ParticleSystem:
       type: 0
       properties: 0
   LightsModule:
-    enabled: 0
-    ratio: 0
-    light: {fileID: 0}
+    enabled: 1
+    ratio: 1
+    light: {fileID: 108779418276308446, guid: 153e9c79343e2244388060d0bae1545d, type: 2}
     randomDistribution: 1
     color: 1
     range: 1
@@ -3729,7 +3729,7 @@ ParticleSystem:
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4893,7 +4893,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 7.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5274,7 +5274,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: 0, z: 0}
+    m_Position: {x: 0, y: 0, z: 0.2}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 0, y: 0, z: 0}
     placementMode: 0
@@ -9255,7 +9255,7 @@ ParticleSystem:
   simulationSpeed: 1
   stopAction: 0
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -9492,7 +9492,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 7.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9873,7 +9873,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: 0, z: 0.25}
+    m_Position: {x: 0, y: 0, z: 0.5}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 0, y: 0, z: 0}
     placementMode: 0

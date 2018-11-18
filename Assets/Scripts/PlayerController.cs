@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
 
     public float moveForce = 50;
     public float maxSpeed = 10;
+    public float dashImpulseForce = 150;
+    public float dashCooldown = 3;
+    public float dashDuration = 0.5f;
+    float dashTimer;
 
     List<SpellSchools> elements = new List<SpellSchools>(3);
     bool castingSpell = false;
@@ -64,12 +68,17 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
+        Dash();
+
         if (playerInput.leftStick.magnitude > 0) //If there is input, move
         {
             Vector3 forceToApply = playerInput.leftStick * moveForce;
             rigidbody.AddForce(forceToApply);
 
-            rigidbody.velocity = Vector3.ClampMagnitude(rigidbody.velocity, maxSpeed);
+            if (dashTimer < (dashCooldown - dashDuration))
+            {
+                rigidbody.velocity = Vector3.ClampMagnitude(rigidbody.velocity, maxSpeed);
+            }
 
             directionalMarker.transform.position = gameObject.transform.position + (playerInput.leftStick * markerDistance);
 
@@ -82,6 +91,19 @@ public class PlayerController : MonoBehaviour
         {
             if (modelAnimator.GetBool("isWalking"))
                 modelAnimator.SetBool("isWalking", false);
+        }
+    }
+
+    void Dash()
+    {
+        if (playerInput.leftBumper && dashTimer <= 0)
+        {
+            rigidbody.AddForce((directionalMarker.transform.position - transform.position).normalized * dashImpulseForce, ForceMode.Impulse);
+            dashTimer = dashCooldown;
+        }
+        else
+        {
+            dashTimer -= Time.deltaTime;
         }
     }
 
