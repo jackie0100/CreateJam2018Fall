@@ -16,14 +16,14 @@ public class SlowEffect : StatusEffect
     {
         timer = 0;
         targetPlayer = player;
-        targetPlayer.GetComponent<PlayerController>().maxSpeed /= 1.25f;
+        targetPlayer.GetComponent<PlayerController>().maxSpeed /= 1.5f;
         yield return new WaitForSeconds(effectLenght);
         EndStatusEffect();
     }
 
     public override void EndStatusEffect()
     {
-        targetPlayer.GetComponent<PlayerController>().maxSpeed *= 1.25f;
+        targetPlayer.GetComponent<PlayerController>().maxSpeed *= 1.5f;
         targetPlayer.RemoveStatusEffect(this);
     }
 }

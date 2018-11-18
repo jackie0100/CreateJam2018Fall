@@ -17,7 +17,7 @@ public class ZoneSpell : MonoBehaviour, IDamageable
         damageMultiplier = damagemultiplier;
         GameObject.Instantiate(SpellManager.instance.zone, pos, Quaternion.identity, this.transform);
         BoxCollider col = this.gameObject.AddComponent<BoxCollider>();
-        col.size = new Vector3(1, 1, 1);
+        col.size = new Vector3(2,2,2);
         col.isTrigger = true;
         StartCoroutine(DamageHandler());
     }

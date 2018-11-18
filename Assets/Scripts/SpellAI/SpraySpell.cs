@@ -26,7 +26,7 @@ public class SpraySpell : MonoBehaviour, ICastable
         }
         else
         {
-            this.GetComponent<IDamageable>().DoDamageEffect(player.transform.TransformDirection(Vector3.forward * 2) + player.transform.position, damagemultiplier);
+            this.GetComponent<IDamageable>().DoDamageEffect(player.GetComponent<PlayerController>().model.transform.TransformDirection(Vector3.forward * 3) + player.transform.position, damagemultiplier);
         }
     }
 

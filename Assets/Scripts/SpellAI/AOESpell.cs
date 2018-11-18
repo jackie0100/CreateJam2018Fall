@@ -12,7 +12,7 @@ public class AOESpell : MonoBehaviour, IDamageable
     public void DoDamageEffect(Vector3 pos, float damagemultiplier)
     {
         Collider[] cols = Physics.OverlapSphere(pos, 3);
-
+        GameObject.Instantiate(SpellManager.instance.aoe, pos + (Vector3.up * 0.5f), Quaternion.identity, this.transform);
         foreach (Collider col in cols)
         {
             if (col.transform.GetComponent<Player>() != null)
@@ -39,7 +39,8 @@ public class AOESpell : MonoBehaviour, IDamageable
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
 }

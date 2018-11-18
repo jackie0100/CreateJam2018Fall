@@ -6,7 +6,7 @@ public class PushSpell : MonoBehaviour, ISpellEffect
 {
     public void DoSpellEffect(Player targetPlayer, float damagemultiplier)
     {
-        targetPlayer.GetComponent<Rigidbody>().AddForce((this.transform.position - targetPlayer.transform.position).normalized * 20, ForceMode.VelocityChange);
+        targetPlayer.GetComponent<Rigidbody>().AddForce((targetPlayer.transform.position - this.transform.position).normalized * 20, ForceMode.VelocityChange);
     }
 
     // Use this for initialization

@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        AddStatusEffect(new DotEffect(10, 5));
+        //AddStatusEffect(new DotEffect(10, 5));
     }
 
     // Update is called once per frame
