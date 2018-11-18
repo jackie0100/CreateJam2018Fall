@@ -32,7 +32,7 @@ public class MineSpell : MonoBehaviour, IDamageable
             GameObject.Instantiate(SpellManager.instance.minepush, pos, Quaternion.identity, this.transform);
         }
         BoxCollider col = this.gameObject.AddComponent<BoxCollider>();
-        col.size = new Vector3(2, 2, 2);
+        col.size = new Vector3(1,1,1);
         col.isTrigger = true;
         damageMultiplier = damagemultiplier;
         this.enabled = true;

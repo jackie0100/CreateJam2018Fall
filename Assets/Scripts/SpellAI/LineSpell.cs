@@ -6,6 +6,7 @@ public class LineSpell : MonoBehaviour, ICastable {
     public void CastSpell(Player player, float damagemultiplier)
     {
         //TODO: Linecast and stuff
+
     }
 
     // Use this for initialization
